@@ -17,8 +17,8 @@ def output_date(a, b):
 
 output_date('Today', TODAY)
 
-last_monday = adjacent_mondays('last_monday', +1)
-output_date('Last Monday', last_monday)
+next_monday = adjacent_mondays('next_monday', +1)
+output_date('Next Monday', next_monday)
 
-next_monday = adjacent_mondays('next_monday', -1)
-output_date('Last Monday', next_monday)
+last_monday = adjacent_mondays('last_monday', -1)
+output_date('Last Monday', last_monday)
