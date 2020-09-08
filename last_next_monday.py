@@ -1,6 +1,8 @@
 """Get the dates for the previous and next Mondays."""
 
-from datetime import datetime, timedelta
+from datetime import (date,
+                      datetime,
+                      timedelta)
 from dateutil.relativedelta import relativedelta
 from dateutil.rrule import MO
 
@@ -21,10 +23,17 @@ def output_date(label, mon_date):
     print(f"{label}: {mon_date.strftime('%Y-%m-%d')}")
 
 
-output_date('Today', TODAY)
+output_date("\nToday", TODAY)
 
-next_monday = adjacent_mondays(1)
-output_date('Next Monday', next_monday)
+if date.today().weekday() == 0:
+    next_monday_delta = 2
+    last_monday_delta = -2
+else:
+    next_monday_delta = 1
+    last_monday_delta = -1
 
-last_monday = adjacent_mondays(-1)
-output_date('Last Monday', last_monday)
+next_monday = adjacent_mondays(next_monday_delta)
+output_date("Next Monday", next_monday)
+last_monday = adjacent_mondays(last_monday_delta)
+output_date("Last Monday", last_monday)
+print("\n")
