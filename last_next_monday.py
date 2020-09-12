@@ -20,9 +20,9 @@ def week_ago_today():
 
 TODAY = datetime.now()
 
+print(f"\nlast Monday's date: {week_ago_today()}")
+next_mon_label = "next Monday's date:"
 if date.today().weekday() == 0:
-    print(week_from_today(1, 1))
-    week_ago_today()
+    print(f"{next_mon_label} {week_from_today(1, 1)}\n")
 else:
-    print(week_from_today(0, 1))
-    print(week_ago_today())
+    print(f"{next_mon_label} {week_from_today(0, 1)}\n")
